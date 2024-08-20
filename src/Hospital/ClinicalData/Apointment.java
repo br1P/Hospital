@@ -1,4 +1,8 @@
-import java.util.Date;
+package Hospital;
+
+import Hospital.People.Medic;
+import Hospital.People.Pacient;
+
 public class Apointment {
     private String date;
     private Medic medic;
@@ -46,7 +50,7 @@ public class Apointment {
 
     @Override
     public String toString() {
-        return "Apointment{" +
+        return "Hospital.Apointment{" +
                 "date=" + date +
                 ", medic=" + medic +
                 ", pacient=" + pacient +

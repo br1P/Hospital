@@ -1,11 +1,10 @@
+package Hospital;
+
 public abstract class Employee extends Person{
     private double payPerHour;
     private int workedHours;
 
-    public Employee(double payPerHour, int workedHours) {
-        this.payPerHour = payPerHour;
-        this.workedHours = workedHours;
-    }
+
 
     public Employee(String name, String lastname, double payPerHour, int workedHours) {
         super(name, lastname);
@@ -34,7 +33,7 @@ public abstract class Employee extends Person{
 
     @Override
     public String toString() {
-        return super.toString() + "Employee{" +
+        return super.toString() + "Hospital.Employee{" +
                 "payPerHour=" + payPerHour +
                 ", workedHours=" + workedHours +
                 '}';

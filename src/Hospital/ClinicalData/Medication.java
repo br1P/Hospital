@@ -1,3 +1,5 @@
+package Hospital;
+
 public class Medication {
     private String name;
     private String dosage;
@@ -28,7 +30,7 @@ public class Medication {
 
     @Override
     public String toString() {
-        return "Medication{" +
+        return "Hospital.Medication{" +
                 "name='" + name + '\'' +
                 ", dosage='" + dosage + '\'' +
                 '}';

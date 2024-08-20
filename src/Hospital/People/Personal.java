@@ -1,3 +1,5 @@
+package Hospital;
+
 public class Personal extends Employee{
     private Role role;
     private int personalID;
@@ -26,7 +28,7 @@ public class Personal extends Employee{
 
     @Override
     public String toString() {
-        return "Personal{" +
+        return "Hospital.Personal{" +
                 "role=" + role +
                 ", personalID='" + personalID + '\'' +
                 '}';

@@ -1,3 +1,5 @@
+package Hospital;
+
 public class Pacient extends Person{
     private int pacientId;
     private int age;
@@ -26,7 +28,7 @@ public class Pacient extends Person{
 
     @Override
     public String toString() {
-        return super.toString() +"Pacient{" +
+        return super.toString() +"Hospital.Pacient{" +
                 "pacientId=" + pacientId +
                 ", age=" + age +
                 '}';

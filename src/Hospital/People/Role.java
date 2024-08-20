@@ -1,3 +1,5 @@
+package Hospital;
+
 public enum Role {
     RECEPTIONIST,
     CLEANING_STAFF,

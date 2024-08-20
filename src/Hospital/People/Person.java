@@ -1,3 +1,5 @@
+package Hospital;
+
 public abstract class Person {
 
     private String name;
@@ -29,7 +31,7 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Hospital.Person{" +
                 "name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
                 '}';

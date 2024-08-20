@@ -1,3 +1,5 @@
+package Hospital;
+
 public class ClinicalHistory {
     private Treatment treatment;
     private Apointment apointment;
@@ -35,7 +37,7 @@ public class ClinicalHistory {
 
     @Override
     public String toString() {
-        return "ClinicalHistory{" +
+        return "Hospital.ClinicalHistory{" +
                 "treatment=" + treatment +
                 ", apointment=" + apointment +
                 ", idCh=" + idCh +

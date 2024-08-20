@@ -1,14 +1,17 @@
+package Hospital;
+
 public class Medic extends Employee{
     private Specialty specialty;
     private int licenseNumber;
 
-    //region getter & setter
+
+
     public Medic(String name, String lastname, double payPerHour, int workedHours, Specialty specialty, int licenseNumber) {
         super(name, lastname, payPerHour, workedHours);
         this.specialty = specialty;
         this.licenseNumber = licenseNumber;
     }
-
+    //region getter & setter
     public Specialty getSpecialty() {
         return specialty;
     }
@@ -28,7 +31,7 @@ public class Medic extends Employee{
 
     @Override
     public String toString() {
-        return super.toString() + "Medic{" +
+        return super.toString() + "Hospital.Medic{" +
                 "specialty=" + specialty +
                 ", licenseNumber='" + licenseNumber + '\'' +
                 '}';

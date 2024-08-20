@@ -1,3 +1,5 @@
+package Hospital;
+
 public enum Specialty {
     CARDIOLOGY,
     DERMATOLOGY,

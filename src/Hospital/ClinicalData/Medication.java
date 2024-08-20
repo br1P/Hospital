@@ -1,4 +1,4 @@
-package Hospital;
+package Hospital.ClinicalData;
 
 public class Medication {
     private String name;
@@ -30,9 +30,8 @@ public class Medication {
 
     @Override
     public String toString() {
-        return "Hospital.Medication{" +
+        return "Medication" +
                 "name='" + name + '\'' +
-                ", dosage='" + dosage + '\'' +
-                '}';
+                ", dosage='" + dosage + '\'';
     }
 }

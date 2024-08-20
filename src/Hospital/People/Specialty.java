@@ -1,4 +1,4 @@
-package Hospital;
+package Hospital.People;
 
 public enum Specialty {
     CARDIOLOGY,

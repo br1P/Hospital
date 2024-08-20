@@ -1,10 +1,11 @@
-package Hospital;
+package Hospital.ClinicalData;
 
 import Hospital.People.Medic;
 import Hospital.People.Pacient;
+import Hospital.Room;
 
 public class Apointment {
-    private String date;
+    private String date; //private Date date;
     private Medic medic;
     private Pacient pacient;
     private Room room;
@@ -50,11 +51,10 @@ public class Apointment {
 
     @Override
     public String toString() {
-        return "Hospital.Apointment{" +
-                "date=" + date +
-                ", medic=" + medic +
-                ", pacient=" + pacient +
-                ", room=" + room +
-                '}';
+        return "Apointment: \n" +
+                "date:\n " + date + '\n' +
+                "Medic: \n" + medic +
+                "Pacient: \n" + pacient + '\n' +
+                room ;
     }
 }

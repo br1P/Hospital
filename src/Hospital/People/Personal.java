@@ -1,4 +1,6 @@
-package Hospital;
+package Hospital.People;
+
+import java.util.Objects;
 
 public class Personal extends Employee{
     private Role role;
@@ -26,11 +28,27 @@ public class Personal extends Employee{
         this.personalID = personalID;
     }
 
+    String prefix(){
+        return "Employee ";
+    };
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Personal personal = (Personal) o;
+        return personalID == personal.personalID && role == personal.role;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(role, personalID);
+    }
+
     @Override
     public String toString() {
-        return "Hospital.Personal{" +
-                "role=" + role +
-                ", personalID='" + personalID + '\'' +
-                '}';
+        return super.toString() +
+                "role:" + role +
+                ", personalID: '" + personalID + '\'';
     }
 }

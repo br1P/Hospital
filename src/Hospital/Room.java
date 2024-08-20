@@ -1,6 +1,8 @@
+package Hospital;
+
 public class Room {
     private int roomNumber;
-    private String roomType; //single or shared
+    private String roomType; //single or shared maybe this can be a boolean?
 
     public Room(int roomNumber, String roomType) {
         this.roomNumber = roomNumber;
@@ -25,9 +27,8 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "roomNumber=" + roomNumber +
-                ", roomType='" + roomType + '\'' +
-                '}';
+        return "Room:\n" +
+                "room number:" + roomNumber +
+                ", room type:'" + roomType + '\'' ;
     }
 }

@@ -1,4 +1,6 @@
-package Hospital;
+package Hospital.People;
+
+import java.util.Objects;
 
 public class Pacient extends Person{
     private int pacientId;
@@ -26,11 +28,27 @@ public class Pacient extends Person{
         this.age = age;
     }
 
+    String prefix(){
+        return "Pacient ";
+    };
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pacient pacient = (Pacient) o;
+        return pacientId == pacient.pacientId && age == pacient.age;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pacientId, age);
+    }
+
     @Override
     public String toString() {
-        return super.toString() +"Hospital.Pacient{" +
-                "pacientId=" + pacientId +
-                ", age=" + age +
-                '}';
+        return   super.toString() +
+                "pacient Id:" + pacientId +
+                ", age: " + age ;
     }
 }

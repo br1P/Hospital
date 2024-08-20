@@ -1,4 +1,4 @@
-package Hospital;
+package Hospital.ClinicalData;
 
 import java.util.List;
 public class Treatment {
@@ -38,10 +38,9 @@ public class Treatment {
 
     @Override
     public String toString() {
-        return "Hospital.Treatment{" +
-                "observation='" + observation + '\'' +
-                ", days=" + days +
-                ", medication=" + medication +
-                '}';
+        return "Treatment: \n " +
+                "observation: '" + observation + '\'' +
+                ", days: " + days +
+                ", medication: " + medication + '\n';
     }
 }

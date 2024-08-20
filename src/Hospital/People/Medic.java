@@ -1,10 +1,19 @@
-package Hospital;
+package Hospital.People;
+
+import java.util.Objects;
 
 public class Medic extends Employee{
-    private Specialty specialty;
-    private int licenseNumber;
+    protected Specialty specialty;
+    protected int licenseNumber;
 
 
+    public Medic() {
+    }
+
+
+    public Medic(String name, String lastname, double payPerHour, int workedHours) {
+        super(name, lastname, payPerHour, workedHours);
+    }
 
     public Medic(String name, String lastname, double payPerHour, int workedHours, Specialty specialty, int licenseNumber) {
         super(name, lastname, payPerHour, workedHours);
@@ -29,11 +38,27 @@ public class Medic extends Employee{
     }
 //endregion
 
+    String prefix(){
+        return "Dr.";
+    };
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Medic medic = (Medic) o;
+        return licenseNumber == medic.licenseNumber && specialty == medic.specialty;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(specialty, licenseNumber);
+    }
+
     @Override
     public String toString() {
-        return super.toString() + "Hospital.Medic{" +
-                "specialty=" + specialty +
-                ", licenseNumber='" + licenseNumber + '\'' +
-                '}';
+        return super.toString() +
+                "specialty: " + specialty +
+                ", licenseNumber:'" + licenseNumber + '\n' ;
     }
 }

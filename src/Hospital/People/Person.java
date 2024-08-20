@@ -1,15 +1,15 @@
-package Hospital;
+package Hospital.People;
 
 public abstract class Person {
 
-    private String name;
-    private String lastname;
+    protected String name;
+    protected String lastname;
 
     public Person() {
     }
 
     public Person(String name, String lastname) {
-        this.name = name;
+        this.name = prefix() + name;
         this.lastname = lastname;
     }
 
@@ -29,11 +29,10 @@ public abstract class Person {
         this.lastname = lastname;
     }
 
+    abstract String prefix();
     @Override
     public String toString() {
-        return "Hospital.Person{" +
-                "name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                '}';
+        return
+                "name: '" + name + " "  + lastname + '\'' ;
     }
 }

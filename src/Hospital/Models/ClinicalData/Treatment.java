@@ -1,14 +1,13 @@
-package Hospital.ClinicalData;
+package Hospital.Models.ClinicalData;
 
 import java.util.List;
 public class Treatment {
     private String observation;
-    private int days;
     private List<Medication> medication;
 
-    public Treatment(String observation, int days, List<Medication> medication) {
+    public Treatment(String observation, List<Medication> medication) {
         this.observation = observation;
-        this.days = days;
+
         this.medication = medication;
     }
 
@@ -20,13 +19,7 @@ public class Treatment {
         this.observation = observation;
     }
 
-    public int getDays() {
-        return days;
-    }
 
-    public void setDays(int days) {
-        this.days = days;
-    }
 
     public List<Medication> getMedication() {
         return medication;
@@ -40,7 +33,7 @@ public class Treatment {
     public String toString() {
         return "Treatment: \n " +
                 "observation: '" + observation + '\'' +
-                ", days: " + days +
+
                 ", medication: " + medication + '\n';
     }
 }

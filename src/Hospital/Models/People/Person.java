@@ -1,6 +1,6 @@
-package Hospital.People;
+package Hospital.Models.People;
 
-public abstract class Person {
+public abstract class Person implements Prefix{
 
     protected String name;
     protected String lastname;
@@ -9,7 +9,7 @@ public abstract class Person {
     }
 
     public Person(String name, String lastname) {
-        this.name = prefix() + name;
+        this.name =  name;
         this.lastname = lastname;
     }
 
@@ -29,10 +29,10 @@ public abstract class Person {
         this.lastname = lastname;
     }
 
-    abstract String prefix();
+    abstract public String prefix();
     @Override
     public String toString() {
         return
-                "name: '" + name + " "  + lastname + '\'' ;
+                "name: '" + prefix() + name + " "  + lastname + '\'' ;
     }
 }

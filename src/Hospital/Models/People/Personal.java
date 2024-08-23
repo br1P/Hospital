@@ -1,17 +1,20 @@
-package Hospital.People;
+package Hospital.Models.People;
+
+import Hospital.enums.Role;
 
 import java.util.Objects;
 
-public class Personal extends Employee{
-    private Role role;
-    private int personalID;
-
+public class Personal extends Employee implements Prefix,Salary{
+    protected Role role;
+    protected int personalID;
+    protected final double ExtraHours=1.2;
     public Personal(String name, String lastname, double payPerHour, int workedHours, Role role, int personalID) {
         super(name, lastname, payPerHour, workedHours);
         this.role = role;
         this.personalID = personalID;
     }
 
+    //region Getter & Setters
     public Role getRole() {
         return role;
     }
@@ -27,10 +30,20 @@ public class Personal extends Employee{
     public void setPersonalID(int personalID) {
         this.personalID = personalID;
     }
-
-    String prefix(){
+//endregion
+public String prefix(){
         return "Employee ";
     };
+
+    @Override
+    public double calcSalary() {
+        if(workedHours<38){
+            return super.calcSalary();}
+        else{
+            int extraWorkedHours=workedHours-38;
+            return 38*payPerHour + (extraWorkedHours*payPerHour*1.5);
+        }
+    }
 
     @Override
     public boolean equals(Object o) {

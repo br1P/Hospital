@@ -1,24 +1,19 @@
-package Hospital.People;
+package Hospital.Models.People;
+
+import Hospital.enums.Specialty;
 
 import java.util.Objects;
 
-public class Medic extends Employee{
+public class Medic extends Employee implements Prefix,Salary{
+    protected static int licenseNumberGen=0;
     protected Specialty specialty;
     protected int licenseNumber;
+    protected final double ExtraHours=1.5;
 
-
-    public Medic() {
-    }
-
-
-    public Medic(String name, String lastname, double payPerHour, int workedHours) {
-        super(name, lastname, payPerHour, workedHours);
-    }
-
-    public Medic(String name, String lastname, double payPerHour, int workedHours, Specialty specialty, int licenseNumber) {
+    public Medic(String name, String lastname, double payPerHour, int workedHours, Specialty specialty) {
         super(name, lastname, payPerHour, workedHours);
         this.specialty = specialty;
-        this.licenseNumber = licenseNumber;
+        this.licenseNumber = ++Medic.licenseNumberGen;
     }
     //region getter & setter
     public Specialty getSpecialty() {
@@ -38,9 +33,19 @@ public class Medic extends Employee{
     }
 //endregion
 
-    String prefix(){
+    public String prefix(){
         return "Dr.";
-    };
+    }
+
+    @Override
+    public double calcSalary() {
+        if(workedHours<38){
+        return super.calcSalary();}
+        else{
+            int extraWorkedHours=workedHours-38;
+            return 38*payPerHour + (extraWorkedHours*payPerHour*1.5);
+        }
+    }
 
     @Override
     public boolean equals(Object o) {

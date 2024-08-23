@@ -1,22 +1,18 @@
-package Hospital.People;
+package Hospital.Models.People;
 
-public abstract class Employee extends Person{
+public abstract class Employee extends Person implements Salary{
     protected double payPerHour;
     protected int workedHours;
 
 
-    public Employee() {
-    }
 
-    public Employee(String name, String lastname) {
-        super(name, lastname);
-    }
 
     public Employee(String name, String lastname, double payPerHour, int workedHours) {
         super(name, lastname);
         this.payPerHour = payPerHour;
         this.workedHours = workedHours;
     }
+
 
     //region getter & setter
     public double getPayPerHour() {
@@ -36,6 +32,9 @@ public abstract class Employee extends Person{
     }
     //endregion
 
+    public double calcSalary(){
+        return  workedHours*payPerHour;
+    }
 
     @Override
     public String toString() {

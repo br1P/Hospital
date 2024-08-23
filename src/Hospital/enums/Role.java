@@ -1,4 +1,4 @@
-package Hospital.People;
+package Hospital.enums;
 
 public enum Role {
     RECEPTIONIST,

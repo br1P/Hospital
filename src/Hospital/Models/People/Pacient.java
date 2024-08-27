@@ -54,6 +54,8 @@ public class Pacient extends Person implements Prefix{
 
     //endregion
 
+
+
     final public String prefix(){
         System.out.println(this.gender);
         if ("male".equalsIgnoreCase(this.gender)) {
@@ -64,6 +66,7 @@ public class Pacient extends Person implements Prefix{
             return "Unknown";
         }
     }
+
 
     @Override
     public boolean equals(Object o) {

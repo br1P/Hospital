@@ -4,7 +4,7 @@ import Hospital.enums.Specialty;
 
 import java.util.Objects;
 
-public class Medic extends Employee implements Prefix,Salary{
+public class Medic extends Employee implements Prefix,Salary,Surgery{
     protected static int licenseNumberGen=0;
     protected Specialty specialty;
     protected int licenseNumber;
@@ -37,6 +37,14 @@ public class Medic extends Employee implements Prefix,Salary{
         return "Dr.";
     }
 
+    final public String surgeryRoom(){
+        if(this.specialty.equals(Specialty.CARDIOLOGY)){
+            return "This doctor is allowed to enter Surgery Room \n";
+        }
+        else {
+            return "This doctor is not allowed at the Surgery Room";
+        }
+    }
     @Override
     public double calcSalary() {
         if(workedHours<38){
@@ -64,6 +72,6 @@ public class Medic extends Employee implements Prefix,Salary{
     public String toString() {
         return super.toString() +
                 "specialty: " + specialty +
-                ", licenseNumber:'" + licenseNumber + '\n' ;
+                ", licenseNumber:'" + licenseNumber + '\n' + "salary of the month: " +calcSalary() + " "+ surgeryRoom();
     }
 }

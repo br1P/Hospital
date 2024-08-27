@@ -5,13 +5,13 @@ import Hospital.Models.ClinicalData.HospitalData;
 public class Main {
     public static void main(String[] args) {
 
-        // Generar los datos predeterminados del hospital
-        HospitalData hospitalData = DefaultDataService.generateDefaultHospital();
 
-        // Crear una instancia de HospitalService con los datos generados
-        HospitalService hospitalService = new HospitalService(hospitalData);
+        HospitalData hospitalData = DefaultDataService.generateDefaultHospital(); // Generate data
 
-        // Iniciar el programa
+
+        HospitalService hospitalService = new HospitalService(hospitalData);  // Create an instance with the data generated
+
+
         hospitalService.startProgram();
     }
 }

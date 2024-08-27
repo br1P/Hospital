@@ -1,11 +1,12 @@
 package Hospital.Models.ClinicalData;
 
+import java.util.ArrayList;
 import java.util.List;
 public class Treatment {
     private String observation;
-    private List<Medication> medication;
+    private Medication medication;
 
-    public Treatment(String observation, List<Medication> medication) {
+    public Treatment(String observation, Medication medication) {
         this.observation = observation;
 
         this.medication = medication;
@@ -19,13 +20,11 @@ public class Treatment {
         this.observation = observation;
     }
 
-
-
-    public List<Medication> getMedication() {
+    public Medication getMedication() {
         return medication;
     }
 
-    public void setMedication(List<Medication> medication) {
+    public void setMedication(Medication medication) {
         this.medication = medication;
     }
 

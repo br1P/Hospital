@@ -1,10 +1,11 @@
 package Hospital.Models.People;
 
 import Hospital.enums.Role;
+import Hospital.enums.Specialty;
 
 import java.util.Objects;
 
-public class Personal extends Employee implements Prefix,Salary{
+public class Personal extends Employee implements Prefix,Salary,Surgery{
     protected Role role;
     protected int personalID;
     protected final double ExtraHours=1.2;
@@ -42,6 +43,14 @@ public String prefix(){
         else{
             int extraWorkedHours=workedHours-38;
             return 38*payPerHour + (extraWorkedHours*payPerHour*1.5);
+        }
+    }
+    final public String surgeryRoom(){
+        if(this.role.equals(Role.CLEANING_STAFF)){
+            return "This doctor is allowed to enter Surgery Room \n";
+        }
+        else {
+            return "This doctor is not allowed at the Surgery Room";
         }
     }
 

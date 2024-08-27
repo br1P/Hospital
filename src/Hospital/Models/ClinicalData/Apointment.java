@@ -11,10 +11,7 @@ public class Apointment {
     public Apointment(String date, Medic medic) {
         this.date = date;
         this.medic = medic;
-
-
     }
-
 
     public String getDate() {
         return date;

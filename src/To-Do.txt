@@ -1,0 +1,21 @@
+
+1-Add 5 interfaces to the existing hierarchy.
+2-Use polymorphism with interface from the hierarchy.(calc Salary)
+3-Create
+final:
+class,(MenuService)
+ method, (surgeryRoom)
+ variable.(extra hours)
+4-Create a static
+ block,(logtime in menuService)
+  method,(mainMenu in menuService)
+   variable.(Id gen in medic, pacient, etc)
+
+Create 5 custom exceptions.
+       Handle exceptions in 2 ways.
+       Use try-catch with resources.
+       Log messages to the console, file.
+
+Give the patient a diagnosis and prescribe treatment
+(put in a hospital or write a prescription and make an appointment).
+ Main class for storing and displaying program results: Hospital

@@ -2,6 +2,7 @@ package Hospital.Models.ClinicalData;
 
 import Hospital.Models.People.Medic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClinicalHistory {
@@ -10,8 +11,8 @@ public class ClinicalHistory {
     private int idCh=0;
 
     public ClinicalHistory(List<Apointment> apointments, List<Treatment> treatments) {
-        this.apointments = apointments;
-        this.treatments = treatments;
+        this.apointments = new ArrayList<>();
+        this.treatments = new ArrayList<>();
         this.idCh=0;
 
     }
@@ -38,6 +39,10 @@ public class ClinicalHistory {
 
     public void setIdCh(int idCh) {
         this.idCh = idCh;
+    }
+
+     public void addTreatment(Treatment treatment) {
+        this.treatments.add(treatment);
     }
 
     @Override

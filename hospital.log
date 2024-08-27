@@ -1,0 +1,20 @@
+ago. 27, 2024 2:42:27 P. M. Hospital.HospitalService newApointment
+SEVERE: Exception occurred: 
+Hospital.Exceptions.PacientNotFoundException: Pacient with ID 2 not found.
+	at Hospital.HospitalService.findPacientById(HospitalService.java:144)
+	at Hospital.HospitalService.newApointment(HospitalService.java:70)
+	at Hospital.MenuService.viewApointmentMenu(MenuService.java:66)
+	at Hospital.MenuService.mainMenu(MenuService.java:38)
+	at Hospital.HospitalService.startProgram(HospitalService.java:42)
+	at Main.main(Main.java:15)
+
+ago. 27, 2024 3:30:31 P. M. Hospital.HospitalService newApointment
+SEVERE: Exception occurred: 
+Hospital.Exceptions.PacientNotFoundException: Pacient with ID 3 not found.
+	at Hospital.HospitalService.findPacientById(HospitalService.java:144)
+	at Hospital.HospitalService.newApointment(HospitalService.java:70)
+	at Hospital.MenuService.viewApointmentMenu(MenuService.java:66)
+	at Hospital.MenuService.mainMenu(MenuService.java:38)
+	at Hospital.HospitalService.startProgram(HospitalService.java:42)
+	at Main.main(Main.java:15)
+

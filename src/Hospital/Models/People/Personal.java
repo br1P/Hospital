@@ -1,11 +1,14 @@
 package Hospital.Models.People;
 
+import Hospital.Interfaces.CheckIn;
+import Hospital.Interfaces.Prefix;
+import Hospital.Interfaces.Salary;
+import Hospital.Interfaces.Surgery;
 import Hospital.enums.Role;
-import Hospital.enums.Specialty;
 
 import java.util.Objects;
 
-public class Personal extends Employee implements Prefix,Salary,Surgery{
+public class Personal extends Employee implements Prefix, Salary, Surgery, CheckIn {
     protected Role role;
     protected int personalID;
     protected final double ExtraHours=1.2;
@@ -52,6 +55,12 @@ public String prefix(){
         else {
             return "This doctor is not allowed at the Surgery Room";
         }
+    }
+
+    @Override
+    public boolean Check() {
+        System.out.println("Pacient check in the apointment");
+        return true;
     }
 
     @Override

@@ -1,10 +1,11 @@
 package Hospital.Models.People;
 
+import Hospital.Interfaces.Prefix;
 import Hospital.Models.ClinicalData.ClinicalHistory;
 
 import java.util.Objects;
 
-public class Pacient extends Person implements Prefix{
+public class Pacient extends Person implements Prefix {
     private static int pacientIdGen=0;
     private int age;
     private String gender;

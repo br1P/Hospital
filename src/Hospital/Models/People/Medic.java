@@ -1,14 +1,18 @@
 package Hospital.Models.People;
 
+import Hospital.Interfaces.CheckIn;
+import Hospital.Interfaces.Prefix;
+import Hospital.Interfaces.Salary;
+import Hospital.Interfaces.Surgery;
 import Hospital.enums.Specialty;
 
 import java.util.Objects;
 
-public class Medic extends Employee implements Prefix,Salary,Surgery{
-    protected static int licenseNumberGen=0;
+public class Medic extends Employee implements Prefix, Salary, Surgery, CheckIn {
+    protected static int licenseNumberGen=0; //STATIC VARIABLE
     protected Specialty specialty;
     protected int licenseNumber;
-    protected final double ExtraHours=1.5;
+    protected final double ExtraHours=1.5; //FINAL VARIABLE
 
     public Medic(String name, String lastname, double payPerHour, int workedHours, Specialty specialty) {
         super(name, lastname, payPerHour, workedHours);
@@ -56,6 +60,12 @@ public class Medic extends Employee implements Prefix,Salary,Surgery{
     }
 
     @Override
+    public boolean Check() {
+        System.out.println("Pacient leaved the apointment");
+        return false;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -72,6 +82,6 @@ public class Medic extends Employee implements Prefix,Salary,Surgery{
     public String toString() {
         return super.toString() +
                 "specialty: " + specialty +
-                ", licenseNumber:'" + licenseNumber + '\n' + "salary of the month: " +calcSalary() + " "+ surgeryRoom();
+                ", licenseNumber:" + licenseNumber + '\n' + "salary of the month: " +calcSalary() + " "+ surgeryRoom();
     }
 }

@@ -5,7 +5,7 @@ import Hospital.Models.People.Pacient;
 
 import java.util.List;
 
-public class HospitalData {
+public class HospitalData{
     private List<Medic> medics;
     private List<Pacient> pacients;
 
@@ -29,5 +29,10 @@ public class HospitalData {
     public void setPacients(List<Pacient> pacients) {
         this.pacients = pacients;
     }
+
+
+
+
+
 
 }

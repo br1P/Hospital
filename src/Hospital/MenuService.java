@@ -3,10 +3,10 @@ package Hospital;
 import java.util.Date;
 import java.util.Scanner;
 
-final public class MenuService {
+final public class MenuService {       //FINAL CLASS
     private static HospitalService hospitalService;
 
-    static{
+    static{                            //STATIC BLOCK
         Date logtime= new Date();
         System.out.println("====Welcome====");
         System.out.println("Logged today at:" + logtime);
@@ -35,7 +35,7 @@ final public class MenuService {
 
             switch (option) {
                 case 1:
-                    //makeApointmentMenu();
+                    viewApointmentMenu();
                     break;
                 case 2:
                     viewTreatmentMenu();
@@ -60,13 +60,18 @@ final public class MenuService {
         scanner.close();
     }
 
+    public static void viewApointmentMenu(){
+
+        System.out.println("==NEW APOINTMENT==");
+        hospitalService.newApointment();
+    }
+
     public static void viewTreatmentMenu(){
 
         System.out.println("==NEW treatment==");
         hospitalService.newTreatment();
-
-
     }
+
     public static void viewDataMenu() {
         Scanner scanner = new Scanner(System.in);
         int option;

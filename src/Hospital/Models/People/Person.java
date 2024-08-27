@@ -1,6 +1,8 @@
 package Hospital.Models.People;
 
-public abstract class Person implements Prefix{
+import Hospital.Interfaces.Prefix;
+
+public abstract class Person implements Prefix {
 
     protected String name;
     protected String lastname;

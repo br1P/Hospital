@@ -1,4 +1,4 @@
-package Hospital.Models.People;
+package Hospital.Interfaces;
 
 public interface Prefix {
     String prefix();

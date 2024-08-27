@@ -45,6 +45,10 @@ public class ClinicalHistory {
         this.treatments.add(treatment);
     }
 
+    public void addApointment(Apointment apointment) {
+        this.apointments.add(apointment);
+    }
+
     @Override
     public String toString() {
         return "\nClinicalHistory: \n" +

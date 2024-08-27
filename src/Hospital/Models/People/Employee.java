@@ -1,6 +1,8 @@
 package Hospital.Models.People;
 
-public abstract class Employee extends Person implements Salary{
+import Hospital.Interfaces.Salary;
+
+public abstract class Employee extends Person implements Salary {
     protected double payPerHour;
     protected int workedHours;
 

@@ -1,14 +1,13 @@
 package Hospital;
 
+import Hospital.Generics.CustomLinkedList;
 import Hospital.Models.ClinicalData.*;
 import Hospital.Models.People.Medic;
 import Hospital.Models.People.Pacient;
-import Hospital.Models.People.Personal;
-import Hospital.enums.Role;
+
 import Hospital.enums.Specialty;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class DefaultDataService {
     public static HospitalData generateDefaultHospital(){
@@ -33,7 +32,7 @@ public class DefaultDataService {
         Apointment apointment2 = new Apointment("15/10/2024 18:30",medic1);
 
         //creating treatment and apointment list for the clinical history
-        List<Treatment> treatmentL = new ArrayList<>();
+        CustomLinkedList<Treatment> treatmentL = new CustomLinkedList<>();
         treatmentL.add(treatment1);
         List<Apointment> apointmentL = new ArrayList<>();
         apointmentL.add(apointment1);
@@ -46,10 +45,10 @@ public class DefaultDataService {
         Pacient pacient1=new Pacient("Mary","Lou",12,"female",clinicalHistory1);
 
         //creating list of pacients
-        List<Pacient> pacientsData = new ArrayList<>();
-        pacientsData.add(pacient1);
+        Map<Integer, Pacient> pacientsData = new HashMap<>();
+        pacientsData.put(pacient1.getPacientID(), pacient1);
         //creating list of doctors
-        List<Medic> medicsData = new ArrayList<>();
+        Set<Medic> medicsData = new HashSet<>();
         medicsData.add(medic1);
 
         HospitalData hospitalData = new HospitalData(medicsData,pacientsData);

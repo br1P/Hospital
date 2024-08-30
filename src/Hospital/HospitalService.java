@@ -13,7 +13,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,7 +45,7 @@ public class HospitalService {
     }
 
     public void viewAllMedics() {
-        List<Medic> medics = hospitalData.getMedics();
+        Set<Medic> medics = hospitalData.getMedics();
         System.out.println("=== All Medics ===");
         for (Medic medic : medics) {
             System.out.println(medic);
@@ -51,9 +53,9 @@ public class HospitalService {
     }
 
     public void viewAllPacients() {
-        List<Pacient> pacients = hospitalData.getPacients();
+        Map<Integer, Pacient> pacients = hospitalData.getPacients();
         System.out.println("=== All Pacients ===");
-        for (Pacient pacient : pacients) {
+        for (Pacient pacient : pacients.values()) {
             System.out.println(pacient);
         }
     }
@@ -136,13 +138,13 @@ public class HospitalService {
     }
 
     private Pacient findPacientById(int idPacient) {
-        for (Pacient p : hospitalData.getPacients()) {
-            if (p.getPacientID() == idPacient) {
-                return p;
-            }
+        Pacient pacient = hospitalData.getPacients().get(idPacient);
+        if (pacient == null) {
+            throw new PacientNotFoundException(idPacient);
         }
-        throw new PacientNotFoundException(idPacient);
+        return pacient;
     }
+
 
     private Medic findMedicById(int idMedic) {
         for (Medic m : hospitalData.getMedics()) {

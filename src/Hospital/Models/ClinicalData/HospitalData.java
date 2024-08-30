@@ -3,33 +3,32 @@ package Hospital.Models.ClinicalData;
 import Hospital.Models.People.Medic;
 import Hospital.Models.People.Pacient;
 
-import java.util.List;
+import java.util.*;
 
 public class HospitalData{
-    private List<Medic> medics;
-    private List<Pacient> pacients;
+    private Set<Medic> medics;
+    private Map<Integer, Pacient> pacients;
 
-    public HospitalData(List<Medic> medics, List<Pacient> pacients) {
-        this.medics = medics;
+    public HospitalData(Set<Medic> medics, Map<Integer, Pacient> pacients) {
+        this.medics = new HashSet<>(medics);
         this.pacients = pacients;
     }
 
-    public List<Medic> getMedics() {
+    public Set<Medic> getMedics() {
         return medics;
     }
 
-    public void setMedics(List<Medic> medics) {
+    public void setMedics(Set<Medic> medics) {
         this.medics = medics;
     }
 
-    public List<Pacient> getPacients() {
+    public Map<Integer, Pacient> getPacients() {
         return pacients;
     }
 
-    public void setPacients(List<Pacient> pacients) {
+    public void setPacients(Map<Integer, Pacient> pacients) {
         this.pacients = pacients;
     }
-
 
 
 

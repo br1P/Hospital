@@ -43,10 +43,13 @@ public class DefaultDataService {
 
         //creating pacient
         Pacient pacient1=new Pacient("Mary","Lou",12,"female",clinicalHistory1);
-
+        Pacient pacient2=new Pacient("Tom","Watson",22,"male",clinicalHistory1);
+        Pacient pacient3=new Pacient("Robert","Downey",55,"male",clinicalHistory1);
         //creating list of pacients
         Map<Integer, Pacient> pacientsData = new HashMap<>();
         pacientsData.put(pacient1.getPacientID(), pacient1);
+        pacientsData.put(pacient2.getPacientID(), pacient2);
+        pacientsData.put(pacient3.getPacientID(), pacient3);
         //creating list of doctors
         Set<Medic> medicsData = new HashSet<>();
         medicsData.add(medic1);

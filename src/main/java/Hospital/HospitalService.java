@@ -59,12 +59,20 @@ public class HospitalService {
             System.out.println(pacient);
         }
     }
+    public void viewAllPacientsNameID() {
+        Map<Integer, Pacient> pacients = hospitalData.getPacients();
+        System.out.println("=== All Pacients ===");
+        for (Pacient pacient : pacients.values()) {
+            System.out.println("name: " +pacient.getName() +" "+ pacient.getLastname() + " | ID: "+ pacient.getPacientID());
+        }
+    }
 
     public void newApointment(){
         Scanner scanner = new Scanner(System.in);
 
 
         System.out.print("Please choose pacient by ID: ");
+        viewAllPacientsNameID();
         int idPacient = scanner.nextInt();
         scanner.nextLine();
         try {
@@ -107,6 +115,7 @@ public class HospitalService {
 
         // id client
         System.out.print("Please choose pacient by ID: ");
+        viewAllPacientsNameID();
         int idPacient = scanner.nextInt();
         scanner.nextLine();
         try {

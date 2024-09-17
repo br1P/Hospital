@@ -19,11 +19,7 @@ public class DefaultDataService {
         //creating 2 medications
         Medication medication1=new Medication("Ibuprofen","500mg");
         Medication medication2 = new Medication("Paracetamol", "500mg");
-        //adding them to a list
-        //List<Medication> medications = new ArrayList<>();
-       // medications.add(medication1);
-       // medications.add(medication2);
-        //creating one treatment
+
         Treatment treatment1= new Treatment("headache",medication1);
 
 

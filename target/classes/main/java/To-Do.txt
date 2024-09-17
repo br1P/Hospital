@@ -1,0 +1,8 @@
+
+
+1-Use at least 5 lambda functions from the java.util.function package.
+(If your logic does not imply the use of lambda, then try changing or adding to your logic) Medic class ✔️
+
+2-Create 3 custom Lambda functions with generics.
+
+3-Create 5 complex Enums(with fields, methods, blocks). Role enum ✔️

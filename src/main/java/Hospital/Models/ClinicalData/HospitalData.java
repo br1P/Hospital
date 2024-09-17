@@ -29,6 +29,9 @@ public class HospitalData{
     public void setPacients(Map<Integer, Pacient> pacients) {
         this.pacients = pacients;
     }
+    public Set<Medic> getMedicsData() {
+        return medics;
+    }
 
 
 
